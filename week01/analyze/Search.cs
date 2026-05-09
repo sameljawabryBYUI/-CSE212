@@ -1,4 +1,7 @@
-﻿using System.Diagnostics;
+﻿// Reviewed for Week 1 Activity
+
+
+using System.Diagnostics;
 
 public static class Search {
     public static void Run() {

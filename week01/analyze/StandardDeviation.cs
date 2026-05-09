@@ -1,4 +1,8 @@
-﻿/// <summary>
+﻿
+// Reviewed for Week 1 Activity
+
+
+/// <summary>
 /// These 3 functions will (in different ways) calculate the standard
 /// deviation from a list of numbers.  The standard deviation
 /// is defined as the square root of the variance.  The variance is 
