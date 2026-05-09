@@ -9,11 +9,22 @@ public static class Arrays
     public static double[] MultiplesOf(double number, int length)
     {
         // TODO Problem 1 Start
-        // Remember: Using comments in your program, write down your process for solving this problem
-        // step by step before you write the code. The plan should be clear enough that it could
-        // be implemented by another person.
+        // PLAN:
+        // 1. Create a new array of doubles with the size of the 'length' parameter.
+        // 2. Set up a for-loop that will iterate 'length' times (from index 0 to length - 1).
+        // 3. Inside the loop, calculate the current multiple. Since the index starts at 0, 
+        //    we multiply the starting 'number' by (index + 1) to get the correct multiple.
+        // 4. Assign this calculated value to the current index in the array.
+        // 5. After the loop finishes, return the filled array.
 
-        return []; // replace this return statement with your own
+        double[] multiples = new double[length];
+
+        for (int i = 0; i < length; i++)
+        {
+            multiples[i] = number * (i + 1);
+        }
+
+        return multiples;
     }
 
     /// <summary>
@@ -26,8 +37,20 @@ public static class Arrays
     public static void RotateListRight(List<int> data, int amount)
     {
         // TODO Problem 2 Start
-        // Remember: Using comments in your program, write down your process for solving this problem
-        // step by step before you write the code. The plan should be clear enough that it could
-        // be implemented by another person.
+        // PLAN:
+        // 1. Find the index where we need to split the list. Since we are moving the last 'amount' 
+        //    of items, the starting index for our cut is the total count of the list minus the amount.
+        // 2. Use the GetRange method to copy those last items into a new, temporary list.
+        // 3. Use the RemoveRange method to delete those items from the end of the original list.
+        // 4. Use the InsertRange method to insert the temporary list items at the very beginning 
+        //    (index 0) of the original list.
+
+        int splitIndex = data.Count - amount;
+
+        List<int> elementsToMove = data.GetRange(splitIndex, amount);
+
+        data.RemoveRange(splitIndex, amount);
+
+        data.InsertRange(0, elementsToMove);
     }
 }
